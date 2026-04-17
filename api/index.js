@@ -8,6 +8,9 @@ const authRoutes = require('../backend/routes/authRoutes');
 
 dotenv.config();
 
+// Disable buffering so we discover connection errors immediately
+mongoose.set('bufferCommands', false);
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -38,10 +41,17 @@ const connectDB = async () => {
     }
 };
 
-// Middleware to ensure DB connection
+// Middleware to ensure DB connection before processing requests
 app.use(async (req, res, next) => {
-    await connectDB();
-    next();
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        res.status(503).json({ 
+            error: "Database connection failed", 
+            details: "Please verify MongoDB Atlas IP Whitelist allows Access from Anywhere (0.0.0.0/0)." 
+        });
+    }
 });
 
 module.exports = app;
