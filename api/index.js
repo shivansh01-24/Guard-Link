@@ -19,10 +19,6 @@ app.use(express.json());
 // but keeping it for local 'vercel dev' compatibility)
 app.use(express.static('frontend'));
 
-// API Routes
-app.use('/api/auth', authRoutes);
-app.use('/api', scanRoutes);
-
 // MongoDB Connection Logic for Serverless
 let isConnected = false;
 
@@ -54,5 +50,10 @@ app.use(async (req, res, next) => {
         });
     }
 });
+
+// API Routes
+app.use('/api/auth', authRoutes);
+app.use('/api', scanRoutes);
+
 
 module.exports = app;
