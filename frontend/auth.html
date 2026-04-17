@@ -67,7 +67,7 @@
             passwordInput.type = showPasswordCheckbox.checked ? 'text' : 'password';
         });
 
-        toggleAuth.addEventListener('click', (e) => {
+        function handleToggle(e) {
             e.preventDefault();
             isLogin = !isLogin;
             authTitle.textContent = isLogin ? 'Welcome Back' : 'Create Account';
@@ -77,8 +77,10 @@
                 : 'Already have an account? <a href="#" id="toggle-auth">Log in</a>';
             
             // Re-attach listener because we replaced the innerHTML
-            document.getElementById('toggle-auth').addEventListener('click', arguments.callee);
-        });
+            document.getElementById('toggle-auth').addEventListener('click', handleToggle);
+        }
+
+        toggleAuth.addEventListener('click', handleToggle);
 
         authForm.addEventListener('submit', async (e) => {
             e.preventDefault();
