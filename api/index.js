@@ -38,6 +38,7 @@ const connectDB = async () => {
         console.log('Connected to MongoDB Atlas');
     } catch (error) {
         console.error('MongoDB Atlas connection error:', error);
+        throw error; // Rethrow so middleware can catch it
     }
 };
 
