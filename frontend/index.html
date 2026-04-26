@@ -3,86 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuardLink | Web Vulnerability Scanner</title>
+    <title>GuardLink | Advanced Web Security Assessment</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="landing-page">
     <div class="background-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
-    <nav>
+    <nav class="nav-transparent">
         <div class="logo">
             <span class="shield-icon">🛡️</span>
             <h1>GuardLink</h1>
         </div>
-        <div class="nav-links" id="nav-actions">
-            <a href="#scanner">Scanner</a>
-            <a href="#history">Historical Logs</a>
-            <!-- Auth content will be injected by app.js -->
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">Process</a>
+            <a href="auth.html" class="btn-primary-small">Sign In</a>
         </div>
     </nav>
 
     <main>
-        <section id="scanner" class="hero">
-            <div class="glass-card scanner-box">
-                <h2>Analyze Security</h2>
-                <p>Identify critical OWASP vulnerabilities in seconds.</p>
-                <form id="scan-form">
-                    <div class="input-group">
-                        <input type="text" id="url-input" placeholder="https://example.com" required>
-                        <button type="submit" id="scan-btn">
-                            <span class="btn-text">Start Scan</span>
-                            <div class="loader hidden"></div>
-                        </button>
+        <section class="hero-full">
+            <div class="hero-content reveal">
+                <span class="badge">Next-Gen Passive Scanner</span>
+                <h2>Secure Your Digital <br><span class="gradient-text">Ecosystem</span></h2>
+                <p>GuardLink identifies critical vulnerabilities and misconfigurations using non-destructive, passive techniques. Protect your assets before they become targets.</p>
+                <div class="hero-btns">
+                    <a href="auth.html" class="btn-glow">Get Started Free</a>
+                    <a href="#features" class="btn-secondary-link">Learn More ↓</a>
+                </div>
+            </div>
+            <div class="hero-graphic reveal-delayed">
+                <img src="hero-bg.png" alt="Cyber Security Graphic">
+            </div>
+        </section>
+
+        <section id="features" class="feature-overview">
+            <div class="section-header reveal">
+                <h3>Built for Modern Security</h3>
+                <p>Comprehensive checks based on OWASP Top 10 principles.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon">🏗️</div>
+                    <h4>Header Analysis</h4>
+                    <p>Deep inspection of CSP, HSTS, and X-Frame-Options to prevent injection and clickjacking.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon">🔒</div>
+                    <h4>HTTPS Enforcement</h4>
+                    <p>Verifies protocol security and ensures data encryption standards are met across all endpoints.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon">🔦</div>
+                    <h4>Endpoint Discovery</h4>
+                    <p>Passive searching for exposed backups, .env files, and sensitive administrative panels.</p>
+                </div>
+                <div class="glass-card feature-card reveal">
+                    <div class="card-icon">💉</div>
+                    <h4>Injection Probing</h4>
+                    <p>Safe, passive test payloads to detect potential SQL and Script injection entry points.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="workflow-section">
+            <div class="glass-container reveal">
+                <h3>The GuardLink Process</h3>
+                <div class="steps-grid">
+                    <div class="step">
+                        <span class="step-num">01</span>
+                        <h5>Target Input</h5>
+                        <p>Enter the URL of the application you want to assess.</p>
                     </div>
-                </form>
-            </div>
-        </section>
-
-        <section id="results-area" class="results-section hidden">
-            <div class="glass-card results-container">
-                <div class="results-header">
-                    <h3>Scan Results</h3>
-                    <span id="target-url" class="badge-url"></span>
-                </div>
-                <div id="vulnerability-list" class="vulnerability-grid">
-                    <!-- Results populated by JS -->
+                    <div class="step">
+                        <span class="step-num">02</span>
+                        <h5>Passive Analysis</h5>
+                        <p>Our engine performs non-destructive probes and header logic checks.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">03</span>
+                        <h5>Risk Dashboard</h5>
+                        <p>Receive a severity-coded report with actionable security insights.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="history" class="history-section">
-            <div class="glass-container">
-                <h3>Recent Scans</h3>
-                <div class="table-wrapper">
-                    <table id="history-table">
-                        <thead>
-                            <tr>
-                                <th>URL</th>
-                                <th>Issues Found</th>
-                                <th>Detected At</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody id="history-body">
-                            <!-- History populated by JS -->
-                        </tbody>
-                    </table>
-                </div>
+        <section class="cta-banner reveal">
+            <div class="glass-card cta-box">
+                <h4>Ready to strengthen your security?</h4>
+                <p>Join developers and security researchers who trust GuardLink for rapid perimeter checks.</p>
+                <a href="auth.html" class="btn-glow">Create Free Account</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 GuardLink Security Engine. Educational Use Only.</p>
+        <div class="footer-content">
+            <div class="logo">
+                <span class="shield-icon">🛡️</span>
+                <h1>GuardLink</h1>
+            </div>
+            <p>&copy; 2026 GuardLink Security. For Educational & Ethical Use Only.</p>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        // Scroll Reveal Animation Logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal, .reveal-delayed').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

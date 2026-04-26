@@ -17,11 +17,11 @@
 
     <main class="auth-main">
         <div class="glass-card auth-card">
-            <div class="auth-header">
+            <a href="index.html" class="auth-header" style="text-decoration: none; color: inherit; display: block;">
                 <span class="shield-icon">🛡️</span>
                 <h1>GuardLink</h1>
                 <p id="auth-title">Welcome Back</p>
-            </div>
+            </a>
 
             <form id="auth-form">
                 <div class="form-group">
@@ -103,7 +103,7 @@
                 if (response.ok) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userEmail', data.user.email);
-                    window.location.href = 'index.html';
+                    window.location.href = 'dashboard.html';
                 } else {
                     alert(data.error || 'Authentication failed');
                 }
